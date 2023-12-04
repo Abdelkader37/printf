@@ -34,6 +34,9 @@ int _puts(char specifier, va_list args)
 	case 'i':
 		sum = print_int(va_arg(args, int));
 	break;
+	case 'b':
+		sum = print_b(va_arg(args, unsigned int));
+	break;
 }
 	return (sum);
 }

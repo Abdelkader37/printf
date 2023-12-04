@@ -141,3 +141,15 @@ int print_str(const char *str)
 
 	return (len);
 }
+/**
+ * print_b - Prints an unsigned integer in binary format to the standard output.
+ * @num: The unsigned integer to be printed.
+ *
+ * Description: Takes an unsigned int as input and prints it in binary format.
+ *
+ * Return: The number of characters printed.
+ */
+int print_b(unsigned int num)
+{
+    return print_int(num, 2);
+}
