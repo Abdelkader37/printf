@@ -33,6 +33,11 @@ int print_int(int num)
 {
 	int count = 0;
 	int temp = num;
+	int num_digits = 1;
+	char buffer[20];
+	int i;
+	int temp_copy;
+
 
 	if (num < 0)
 	{
@@ -40,8 +45,7 @@ int print_int(int num)
 		temp = -num;
 	}
 
-	int num_digits = 1;
-	int temp_copy = temp;
+	temp_copy = temp;
 
 	while (temp_copy >= 10)
 	{
@@ -49,8 +53,6 @@ int print_int(int num)
 		num_digits++;
 	}
 
-	char buffer[20];
-	int i;
 
 	for (i = num_digits - 1; i >= 0; i--)
 	{
