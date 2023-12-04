@@ -155,7 +155,7 @@ int print_b(unsigned int num, int count)
 	if (num > 1)
 		count = print_b(num / 2, count);
 
-	print_int(num % 2, 10);
+	print_int(num % 2, 2);
 
 	return (count + 1);
 }
