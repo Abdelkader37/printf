@@ -15,7 +15,7 @@ int print_char(int ch)
 	int count;
 
 	count = write(1, &ch, 1);
-	return count;
+	return (count);
 }
 
 
@@ -61,5 +61,30 @@ char buffer[20];
 
 		count += write(1, buffer, num_digits);
 
-	return count;
+	return (count);
+}
+
+/**
+ * print_str - Prints a string character by character to the standard output.
+ * @str: The input string to be printed.
+ *
+ * Description:
+ * This function iterates through each character of the input string and prints
+ * it to the standard output using the write function. It also calculates and
+ * returns the length of the string without using the strlen function.
+ *
+ * Returns:
+ * The length of the input string.
+ */
+int print_str(const char *str)
+{
+	int len = 0;
+
+	while (*str != '\0')
+	{
+		write(1, str++, 1);
+		len++;
+	}
+
+	return (len);
 }
