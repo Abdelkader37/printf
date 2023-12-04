@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -12,7 +12,7 @@
 * This function takes a format specifier and a variable argument list
 * and performs the corresponding action based on the specifier.
 *
-* Returns:
+* Returns: sum
 * The total number of characters processed or written.
 */
 int _puts(char specifier, va_list args)
@@ -35,5 +35,5 @@ int _puts(char specifier, va_list args)
 		sum = print_int(va_arg(args, int), 10);
 
     }
-    return sum;
+    return (sum);
 }
