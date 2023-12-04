@@ -96,45 +96,4 @@ int print_str(const char *str)
 }
 
 
-/**
- * print_b - Prints an unsigned integer in binary format to the standard output.
- * @num: The unsigned integer to be printed.
- *
- * Description: Takes an unsigned int as input and prints it in binary format.
- *
- * Return: The number of characters printed.
- */
-int print_b(unsigned int num)
-{
-    int count = 0;
-    int num_digits = 1;
-    char *buffer;
-    int i;
-    unsigned int temp_copy = num;
 
-    while (temp_copy >= 2)
-    {
-        temp_copy /= 2;
-        num_digits++;
-    }
-
-    buffer = (char *)malloc(num_digits + 1);
-
-    if (buffer == NULL)
-    {
-        return -1;
-    }
-
-    i = num_digits - 1;
-
-    for (i; i >= 0; i--)
-    {
-        buffer[i] = '0' + num % 2;
-        num /= 2;
-    }
-    buffer[num_digits] = '\0';
-    count += write(1, buffer, num_digits);
-    free(buffer);
-
-    return count;
-}
