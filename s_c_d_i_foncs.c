@@ -7,12 +7,9 @@
  * print_char - Prints a single character to the standard output.
  * @ch: The character to be printed.
  *
- * Description:
- * This function takes a character as input and prints it to the standard output
- * using the write function. It returns the number of characters printed.
+ * Description: it takes a char as input and prints it to the std out
  *
- * Returns:
- * The number of characters printed (1 for success, 0 for failure).
+ * Return: The number of characters printed (1 for success, 0 for failure).
  */
 int print_char(int ch)
 {
@@ -28,15 +25,10 @@ int print_char(int ch)
  * print_int - Prints an integer to the standard output.
  * @num: The integer to be printed.
  *
- * Description:
- * This function takes an integer as input, handles negative values by
- * printing a minus sign ('-'), and then prints the absolute value of the
- * integer digit by digit to the standard output. It returns the number of
- * characters printed.
+ * Description:ctakes an int as input and prints the absolute value of it
  *
- * Returns:
- * The number of characters printed (including '-' for negative numbers).
- *
+ * Return: The number of characters printed
+ */
 int print_int(int num)
 {
 	int count = 0;
@@ -50,14 +42,17 @@ int print_int(int num)
 
 	int num_digits = 1;
 	int temp_copy = temp;
+
 	while (temp_copy >= 10)
 	{
 		temp_copy /= 10;
 		num_digits++;
 	}
 
-char buffer[20];
-	for (int i = num_digits - 1; i >= 0; i--)
+	char buffer[20];
+	int i;
+
+	for (i = num_digits - 1; i >= 0; i--)
 	{
 		buffer[i] = '0' + temp % 10;
 		temp /= 10;
@@ -66,20 +61,17 @@ char buffer[20];
 		count += write(1, buffer, num_digits);
 
 	return (count);
-*/
+}
 
 /**
  * print_str - Prints a string character by character to the standard output.
  * @str: The input string to be printed.
  *
- * Description:
- * This function iterates through each character of the input string and prints
- * it to the standard output using the write function. It also calculates and
- * returns the length of the string without using the strlen function.
+ * Description: iterates through each character string and prints it
  *
- * Returns:
- * The length of the input string.
+ * Return: The length of the input string.
  */
+
 int print_str(const char *str)
 {
 	int len = 0;
