@@ -1,3 +1,4 @@
+#include <main.h>
 /**
 * _puts - Format and print based on the format specifier.
 * @specifier The format specifier character.
