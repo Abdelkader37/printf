@@ -30,9 +30,9 @@ int _puts(char specifier, va_list args)
 	case 's':
 		sum = print_str(va_arg(args, char* ));
 	break;
-	case 'd':
+	/* case 'd':
 	case 'i':
-		sum = print_int(va_arg(args, int), 10);
+		sum = print_int(va_arg(args, int), 10);*/
 
     }
     return (sum);
