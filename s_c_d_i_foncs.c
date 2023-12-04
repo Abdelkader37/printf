@@ -36,7 +36,7 @@ int print_char(int ch)
  *
  * Returns:
  * The number of characters printed (including '-' for negative numbers).
- */
+ *
 int print_int(int num)
 {
 	int count = 0;
@@ -66,7 +66,7 @@ char buffer[20];
 		count += write(1, buffer, num_digits);
 
 	return (count);
-}
+*/
 
 /**
  * print_str - Prints a string character by character to the standard output.
