@@ -59,9 +59,8 @@ int print_int(int num)
 	return (-1);
 	}
 
-	i = num_digits - 1;
 
-	for (i; i >= 0; i--)
+	for (i = num_digits - 1; i >= 0; i--)
 	{
 	buffer[i] = '0' + temp % 10;
 	temp /= 10;
