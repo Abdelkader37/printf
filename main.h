@@ -11,6 +11,7 @@ int _printf(const char *format, ...);
 int print_int(int num);
 int print_str(const char *str);
 int print_char(int ch);
-int print_b(unsigned int num, int count);
+int print_b(unsigned int num)
+
 
 #endif /* MAIN_H */

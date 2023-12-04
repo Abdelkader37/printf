@@ -95,20 +95,46 @@ int print_str(const char *str)
 	return (len);
 }
 
+
 /**
- * print_b - prints a decimal in binary.
+ * print_b - Prints an unsigned integer in binary format to the standard output.
+ * @num: The unsigned integer to be printed.
  *
- * @num: the integer to be printed in binary.
+ * Description: Takes an unsigned int as input and prints it in binary format.
  *
- * Return: number of digits printed.
+ * Return: The number of characters printed.
  */
-int print_b(unsigned int num, int count)
+int print_b(unsigned int num)
 {
-	if (num > 1)
-		count = print_b(num / 2, count);
+    int count = 0;
+    int num_digits = 1;
+    char *buffer;
+    int i;
+    unsigned int temp_copy = num;
 
-	print_int(num % 2, 2);
+    while (temp_copy >= 2)
+    {
+        temp_copy /= 2;
+        num_digits++;
+    }
 
-	return (count + 1);
+    buffer = (char *)malloc(num_digits + 1);
+
+    if (buffer == NULL)
+    {
+        return -1;
+    }
+
+    i = num_digits - 1;
+
+    for (i; i >= 0; i--)
+    {
+        buffer[i] = '0' + num % 2;
+        num /= 2;
+    }
+    buffer[num_digits] = '\0';
+    count += write(1, buffer, num_digits);
+    free(buffer);
+
+    return count;
 }
-
