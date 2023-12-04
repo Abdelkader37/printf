@@ -1,5 +1,8 @@
 #include "main.h"
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdarg.h>
 /**
  * _printf - A function that prints output according to a format using write.
  * @format: The format string.
