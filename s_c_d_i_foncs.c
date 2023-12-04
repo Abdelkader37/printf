@@ -94,3 +94,21 @@ int print_str(const char *str)
 
 	return (len);
 }
+
+/**
+ * print_b - prints a decimal in binary.
+ *
+ * @num: the integer to be printed in binary.
+ *
+ * Return: number of digits printed.
+ */
+int print_b(unsigned int num, int count)
+{
+	if (num > 1)
+		count = print_b(num / 2, count);
+
+	print_int(num % 2, 10);
+
+	return (count + 1);
+}
+
