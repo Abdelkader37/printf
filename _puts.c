@@ -24,26 +24,16 @@ int _puts(char specifier, va_list args)
 	case '%':
 		sum = write(1, "%", 1);
 	break;
-
 	case 'c':
 		sum = print_char(va_arg(args, int));
 	break;
-
 	case 's':
 		sum = print_str(va_arg(args, char*));
 	break;
-
 	case 'd':
 	case 'i':
 		sum = print_int(va_arg(args, int));
 	break;
-
-	case 'o':
-		sum = print_o(va_arg(args, unsigned int));
-	break;
-
-	case 'u':
-		sum = print_u(va_arg(args, unsigned int));
 }
 	return (sum);
 }
