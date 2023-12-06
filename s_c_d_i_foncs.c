@@ -25,53 +25,45 @@ int print_char(int ch)
  * print_int - Prints an integer to the standard output.
  * @num: The integer to be printed.
  *
- * Description: Takes an int as input and prints the absolute value of it.
+ * Description:ctakes an int as input and prints the absolute value of it
  *
- * Return: The number of characters printed.
+ * Return: The number of characters printed
  */
 int print_int(int num)
 {
 	int count = 0;
 	int temp = num;
 	int num_digits = 1;
-	char *buffer;
+	char buffer[20];
 	int i;
 	int temp_copy;
 
+
 	if (num < 0)
 	{
-	count += write(1, "-", 1);
-	temp = -num;
+		count += write(1, "-", 1);
+		temp = -num;
 	}
 
 	temp_copy = temp;
 
 	while (temp_copy >= 10)
 	{
-	temp_copy /= 10;
-	num_digits++;
-	}
-
-	buffer = (char *)malloc(num_digits + 1);
-
-	if (buffer == NULL)
-	{
-	return (-1);
+		temp_copy /= 10;
+		num_digits++;
 	}
 
 
 	for (i = num_digits - 1; i >= 0; i--)
 	{
-	buffer[i] = '0' + temp % 10;
-	temp /= 10;
+		buffer[i] = '0' + temp % 10;
+		temp /= 10;
 	}
-	buffer[num_digits] = '\0';
-	count += write(1, buffer, num_digits);
-	free(buffer);
+
+		count += write(1, buffer, num_digits);
+
 	return (count);
 }
-
-
 
 /**
  * print_str - Prints a string character by character to the standard output.
@@ -95,7 +87,98 @@ int print_str(const char *str)
 	return (len);
 }
 
+<<<<<<< HEAD
 
 
 
 
+=======
+/**
+ * print_o - Prints an unsigned integer in octal format to the standard output.
+ * @num: The unsigned integer to be printed.
+ *
+ * Description: Takes an unsigned int as input and prints it in octal format.
+ *
+ * Return: The number of characters printed.
+ */
+int print_o(unsigned int num)
+{
+	int count = 0;
+	int num_digits = 1;
+	char *buffer;
+	int i;
+	unsigned int temp_copy = num;
+
+	while (temp_copy >= 8)
+	{
+		temp_copy /= 8;
+		num_digits++;
+	}
+
+	buffer = (char *)malloc(num_digits + 1);
+
+	if (buffer == NULL)
+	{
+		return (-1);
+	}
+
+	i = num_digits - 1;
+
+	for (; i >= 0; i--)
+	{
+		buffer[i] = '0' + num % 8;
+		num /= 8;
+	}
+	buffer[num_digits] = '\0';
+
+	count += printf("%s", buffer);
+	free(buffer);
+
+	return (count);
+}
+
+/**
+ * print_u - Prints an unsigned integer to the standard output.
+ * @num: The unsigned integer to be printed.
+ *
+ * Description: Takes an unsigned int as input and prints it.
+ *
+ * Return: The number of characters printed.
+ */
+
+int print_u(unsigned int num)
+{
+	int count = 0;
+	int num_digits = 1;
+	char *buffer;
+	int i;
+	unsigned int temp_copy = num;
+
+	while (temp_copy >= 10)
+	{
+		temp_copy /= 10;
+		num_digits++;
+	}
+
+	buffer = (char *)malloc(num_digits + 1);
+
+	if (buffer == NULL)
+	{
+		return (-1);
+	}
+
+	i = num_digits - 1;
+
+	for (; i >= 0; i--)
+	{
+		buffer[i] = '0' + num % 10;
+		num /= 10;
+	}
+	buffer[num_digits] = '\0';
+
+	count += printf("%s", buffer);
+	free(buffer);
+
+	return (count);
+}
+>>>>>>> 72ca665997aa1e89ffbf65cae6bef62b2f681479
