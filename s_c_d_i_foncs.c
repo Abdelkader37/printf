@@ -94,3 +94,94 @@ int print_str(const char *str)
 
 	return (len);
 }
+
+
+/**
+ * print_o - Prints an unsigned integer in octal format to the standard output.
+ * @num: The unsigned integer to be printed.
+ *
+ * Description: Takes an unsigned int as input and prints it in octal format.
+ *
+ * Return: The number of characters printed.
+ */
+int print_o(unsigned int num)
+{
+	int count = 0;
+	int num_digits = 1;
+	char *buffer;
+	int i;
+	unsigned int temp_copy = num;
+
+	while (temp_copy >= 8)
+	{
+	temp_copy /= 8;
+	num_digits++;
+	}
+
+	buffer = (char *)malloc(num_digits + 1);
+
+	if (buffer == NULL)
+	{
+	return (-1);
+	}
+
+	i = num_digits - 1;
+
+	for (;i >= 0; i--)
+	{
+	buffer[i] = '0' + num % 8;
+	num /= 8;
+	}
+	buffer[num_digits] = '\0';
+
+	count += printf("%s", buffer);
+	free(buffer);
+
+	return (count);
+}
+
+/**
+ * print_u - Prints an unsigned integer to the standard output.
+ * @num: The unsigned integer to be printed.
+ *
+ * Description: Takes an unsigned int as input and prints it.
+ *
+ * Return: The number of characters printed.
+ */
+int print_u(unsigned int num)
+{
+	int count = 0;
+	int num_digits = 1;
+	char *buffer;
+	int i;
+	unsigned int temp_copy = num;
+
+	while (temp_copy >= 10)
+	{
+	temp_copy /= 10;
+	num_digits++;
+	}
+
+	buffer = (char *)malloc(num_digits + 1);
+
+	if (buffer == NULL)
+	{
+	return (-1);
+	}
+
+	i = num_digits - 1;
+
+	for (;i >= 0; i--)
+	{
+	buffer[i] = '0' + num % 10;
+	num /= 10;
+	}
+	buffer[num_digits] = '\0';
+
+	count += printf("%s", buffer);
+	free(buffer);
+
+	return (count);
+}
+
+

@@ -12,4 +12,7 @@ int print_int(int num);
 int print_str(const char *str);
 int print_char(int ch);
 
+int print_o(unsigned int num);
+int print_u(unsigned int num);
+
 #endif /* MAIN_H */
