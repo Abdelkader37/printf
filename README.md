@@ -9,8 +9,6 @@ Supports %d and %i for integers.
 Handles negative integers and prints them correctly.
 Supports %u for unsigned integers.
 Supports %o for unsigned octal integers.
-Supports %x and %X for unsigned hexadecimal integers.
-Supports %p for printing addresses.
 Handles the % character.
 
 Function Signature:
@@ -33,8 +31,6 @@ The following format specifiers are supported:
 %d or %i: Integer
 %u: Unsigned Integer
 %o: Unsigned Octal Integer
-%x and %X: Unsigned Hexadecimal Integer
-%p: Address
 %%: Percent character
 
 
